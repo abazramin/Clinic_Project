@@ -1,0 +1,9 @@
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\bin\Debug\Clinic_Gui.exe.config
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\bin\Debug\Clinic_Gui.exe
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\bin\Debug\Clinic_Gui.pdb
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.csproj.AssemblyReference.cache
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Properties.Resources.resources
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.csproj.GenerateResource.cache
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.csproj.CoreCompileInputs.cache
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.exe
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.pdb
