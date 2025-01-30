@@ -1,7 +1,10 @@
 ﻿using Clinic_Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Resources;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +12,7 @@ namespace Clinic_Busniess
 {
     public class clsPerson
     {
-        public enum enMode { Add = 0 , Update = 1 }
+        public enum enMode { Add = 0, Update = 1 }
         private enMode _Mode = enMode.Add;
         public int PersonID { get; set; }
         public string Name { get; set; }
@@ -35,7 +38,7 @@ namespace Clinic_Busniess
         }
 
 
-        private clsPerson(int PersonID , string Name, DateTime DateOfBirth, byte Gendor, string Phone_Number,
+        private clsPerson(int PersonID, string Name, DateTime DateOfBirth, byte Gendor, string Phone_Number,
             string Email, string Address)
         {
             this.PersonID = PersonID;
@@ -53,7 +56,7 @@ namespace Clinic_Busniess
         private bool _AddNewPerson()
         {
             // call date access
-            this.PersonID = clsPersonData.AddNewPerson(this.Name , this.DateOfBirth , this.Gendor, this.Phone_Number, this.Email, this.Address);
+            this.PersonID = clsPersonData.AddNewPerson(this.Name, this.DateOfBirth, this.Gendor, this.Phone_Number, this.Email, this.Address);
 
             return (this.PersonID > 0);
         }
@@ -61,7 +64,83 @@ namespace Clinic_Busniess
 
         private bool _UpdatePerson()
         {
-            return clsPersonData.UpdatePerson(this.PersonID , this.Name , this.DateOfBirth, this.Gendor, this.Phone_Number, this.Email, this.Address);
+            return clsPersonData.UpdatePerson(this.PersonID, this.Name, this.DateOfBirth, this.Gendor, this.Phone_Number, this.Email, this.Address);
         }
+
+
+        public static clsPerson Find(int PersonID)
+        {
+            string Name = "", Phone_Number = "", Email = "", Address = "";
+            DateTime DateOfBirth = DateTime.Now;
+            byte Gendor = 0;
+
+            bool isFound = clsPersonData.GetPersonByID(PersonID, ref Name, ref DateOfBirth, ref Gendor, ref Phone_Number, ref Email, ref Address);
+
+            if (isFound)
+            {
+                return new clsPerson(PersonID, Name, DateOfBirth, Gendor, Phone_Number, Email, Address);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static clsPerson Find(string Name)
+        {
+            int PersonID = -1;
+            string Phone_Number = "", Email = "", Address = "";
+            DateTime DateOfBirth = DateTime.Now;
+            byte Gendor = 0;
+
+            bool isFound = clsPersonData.GetPersonByName(Name, ref PersonID, ref DateOfBirth, ref Gendor, ref Phone_Number, ref Email, ref Address);
+
+            if (isFound)
+            {
+                return new clsPerson(PersonID, Name, DateOfBirth, Gendor, Phone_Number, Email, Address);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public bool Save()
+        {
+            switch (_Mode)
+            {
+                case enMode.Add:
+                    if (_AddNewPerson())
+                    {
+                        _Mode = enMode.Update;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case enMode.Update:
+                    return _UpdatePerson();
+            }
+            return false;
+        }
+
+        public DataTable GetAllPerson()
+        {
+            // call date access
+            return clsPersonData.GetAllPerson();
+        }
+
+
+        public bool isExist(int PersonID)
+        {
+            return clsPersonData.IsExsit(PersonID);
+        }
+
+        public bool isExist(string Name)
+        {
+            return clsPersonData.IsExsit(Name);
+        }
+
     }
 }
