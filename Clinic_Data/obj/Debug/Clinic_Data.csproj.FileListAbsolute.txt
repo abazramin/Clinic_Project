@@ -1,0 +1,6 @@
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Data\bin\Debug\Clinic_Data.dll
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Data\bin\Debug\Clinic_Data.pdb
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Data\obj\Debug\Clinic_Data.csproj.AssemblyReference.cache
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Data\obj\Debug\Clinic_Data.csproj.CoreCompileInputs.cache
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Data\obj\Debug\Clinic_Data.dll
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Data\obj\Debug\Clinic_Data.pdb

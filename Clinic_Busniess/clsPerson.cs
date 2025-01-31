@@ -125,19 +125,19 @@ namespace Clinic_Busniess
             return false;
         }
 
-        public DataTable GetAllPerson()
+        public static DataTable GetAllPerson()
         {
             // call date access
             return clsPersonData.GetAllPerson();
         }
 
 
-        public bool isExist(int PersonID)
+        public static bool isExist(int PersonID)
         {
             return clsPersonData.IsExsit(PersonID);
         }
 
-        public bool isExist(string Name)
+        public static bool isExist(string Name)
         {
             return clsPersonData.IsExsit(Name);
         }

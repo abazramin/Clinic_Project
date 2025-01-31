@@ -8,6 +8,6 @@ namespace Clinic_Data
 {
     internal class clsSetting
     {
-        public static string connection = "";
+        public static string connection = @"Server=.;Database=S_Clinic;User Id=sa;Password=sa123456;";
     }
 }

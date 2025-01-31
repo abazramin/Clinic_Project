@@ -7,3 +7,10 @@ C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.cspr
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.csproj.CoreCompileInputs.cache
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.exe
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.pdb
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\bin\Debug\Clinic_Busniess.dll
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\bin\Debug\Clinic_Data.dll
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\bin\Debug\Clinic_Busniess.pdb
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\bin\Debug\Clinic_Data.pdb
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.csproj.Up2Date
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Form1.resources
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Users.frmUsersList.resources

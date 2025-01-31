@@ -1,0 +1,9 @@
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\bin\Debug\Clinic_Busniess.dll
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\bin\Debug\Clinic_Busniess.pdb
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\bin\Debug\Clinic_Data.dll
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\bin\Debug\Clinic_Data.pdb
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\obj\Debug\Clinic_Busniess.csproj.AssemblyReference.cache
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\obj\Debug\Clinic_Busniess.csproj.CoreCompileInputs.cache
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\obj\Debug\Clinic_B.DE82D40D.Up2Date
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\obj\Debug\Clinic_Busniess.dll
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Busniess\obj\Debug\Clinic_Busniess.pdb
