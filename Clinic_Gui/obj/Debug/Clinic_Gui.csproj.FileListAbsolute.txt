@@ -14,3 +14,4 @@ C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\bin\Debug\Clinic_Data.pdb
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.csproj.Up2Date
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Form1.resources
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Users.frmUsersList.resources
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Persons.frmPersonList.resources
