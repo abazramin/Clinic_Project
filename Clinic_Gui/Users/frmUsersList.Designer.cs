@@ -74,7 +74,9 @@
             // 
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
-            "None"});
+            "None",
+            "Person ID",
+            "Name"});
             this.cbFilterBy.Location = new System.Drawing.Point(87, 139);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(121, 24);
@@ -117,6 +119,7 @@
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmUsersList
             // 

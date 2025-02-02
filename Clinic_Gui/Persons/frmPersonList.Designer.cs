@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvPerson = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,12 +38,20 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRecordCount = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showPersonInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPerson
             // 
             this.dgvPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerson.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvPerson.Location = new System.Drawing.Point(12, 157);
             this.dgvPerson.Name = "dgvPerson";
             this.dgvPerson.RowHeadersWidth = 51;
@@ -75,10 +84,19 @@
             // cbFilterBy
             // 
             this.cbFilterBy.FormattingEnabled = true;
+            this.cbFilterBy.Items.AddRange(new object[] {
+            "None",
+            "Person ID",
+            "Name",
+            "Date Of Birth",
+            "Phone",
+            "Email",
+            "Address"});
             this.cbFilterBy.Location = new System.Drawing.Point(109, 115);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(135, 24);
             this.cbFilterBy.TabIndex = 3;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // txtFilterValue
             // 
@@ -86,6 +104,7 @@
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(143, 22);
             this.txtFilterValue.TabIndex = 4;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
             // 
             // btnClose
             // 
@@ -95,6 +114,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAddNew
             // 
@@ -104,6 +124,7 @@
             this.btnAddNew.TabIndex = 6;
             this.btnAddNew.Text = "Add Person";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // label3
             // 
@@ -127,6 +148,49 @@
             this.lbRecordCount.TabIndex = 8;
             this.lbRecordCount.Text = "[??]";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showPersonInfoToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.sendEmailToolStripMenuItem,
+            this.phoneToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 152);
+            // 
+            // showPersonInfoToolStripMenuItem
+            // 
+            this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
+            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.showPersonInfoToolStripMenuItem.Text = "Show Person Info";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.deleteToolStripMenuItem.Text = "Delete ";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // sendEmailToolStripMenuItem
+            // 
+            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.sendEmailToolStripMenuItem.Text = "Send Email";
+            // 
+            // phoneToolStripMenuItem
+            // 
+            this.phoneToolStripMenuItem.Name = "phoneToolStripMenuItem";
+            this.phoneToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.phoneToolStripMenuItem.Text = "Phone";
+            // 
             // frmPersonList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -144,9 +208,11 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPersonList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Person List";
             this.Load += new System.EventHandler(this.frmPersonList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +229,11 @@
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbRecordCount;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem showPersonInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phoneToolStripMenuItem;
     }
 }

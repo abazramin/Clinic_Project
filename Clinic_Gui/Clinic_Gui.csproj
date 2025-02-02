@@ -46,11 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global\clsValidatoin.cs" />
     <Compile Include="Main Screen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Screen.Designer.cs">
       <DependentUpon>Main Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\frmAddUpdatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\frmAddUpdatePerson.Designer.cs">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Persons\frmPersonList.cs">
       <SubType>Form</SubType>
@@ -68,6 +75,9 @@
     </Compile>
     <EmbeddedResource Include="Main Screen.resx">
       <DependentUpon>Main Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\frmAddUpdatePerson.resx">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\frmPersonList.resx">
       <DependentUpon>frmPersonList.cs</DependentUpon>

@@ -15,3 +15,4 @@ C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.cspr
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Form1.resources
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Users.frmUsersList.resources
 C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Persons.frmPersonList.resources
+C:\Users\Abazr amin\source\repos\Clinic_Gui\Clinic_Gui\obj\Debug\Clinic_Gui.Persons.frmAddUpdatePerson.resources

@@ -20,28 +20,30 @@ namespace Clinic_Gui.Persons
             InitializeComponent();
         }
 
-        //only select the columns that you want to show in the grid
-        private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "Name",
-                                                         "DateOfBirth", "Gendor", "Phone_Number", "Email",
-                                                         "Address");
+        ////only select the columns that you want to show in the grid
+        //private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false,  "PersonID", "Name",
+        //                                                 "DateOfBirth", "Gendor", "Phone_Number", "Email",
+        //                                                 "Address");
 
         private void _RefreshPeoplList()
         {
             _dtAllPeople = clsPerson.GetAllPerson();
-            _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "Name",
+            _dtAllPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "Name",
                                                          "DateOfBirth", "Gendor", "Phone_Number", "Email",
                                                          "Address");
 
-            dgvPerson.DataSource = _dtPeople;
+            dgvPerson.DataSource = _dtAllPeople;
             lbRecordCount.Text = dgvPerson.Rows.Count.ToString();
         }
 
         private void frmPersonList_Load(object sender, EventArgs e)
         {
-            dgvPerson.DataSource = _dtPeople;
-            //cbFilterBy.SelectedIndex = 0;
+            //_dtAllPeople.DefaultView.RowFilter = "";
+            dgvPerson.DataSource = _dtAllPeople;
+            cbFilterBy.SelectedIndex = 0;
             lbRecordCount.Text = dgvPerson.Rows.Count.ToString();
-            if (dgvPerson.Rows.Count > 0)
+
+            if (dgvPerson.Rows.Count >= 0)
             {
 
                 dgvPerson.Columns[0].HeaderText = "Person ID";
@@ -64,9 +66,92 @@ namespace Clinic_Gui.Persons
                 dgvPerson.Columns[5].HeaderText = "Email";
                 dgvPerson.Columns[5].Width = 120;
 
-                dgvPerson.Columns[5].HeaderText = "Address";
-                dgvPerson.Columns[5].Width = 120;
+                dgvPerson.Columns[6].HeaderText = "Address";
+                dgvPerson.Columns[6].Width = 120;
             }
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilterValue.Visible = (cbFilterBy.Text != "None");
+            //if the text box is visible, then clear the combo box
+            if (txtFilterValue.Visible)
+            {
+                txtFilterValue.Text = "";
+                txtFilterValue.Focus();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+            string FilterColums = "";
+
+
+            switch (FilterColums)
+            {
+                case "Person ID":
+                    FilterColums = "PersonID";
+                    break;
+                case "Name":
+                    FilterColums = "Name";
+                    break;
+                case "Date Of Birth":
+                    FilterColums = "DateOfBirth";
+                    break;
+                case "Gendor":
+                    FilterColums = "Gendor";
+                    break;
+                case "Phone":
+                    FilterColums = "Phone_Number";
+                    break;
+                case "Email":
+                    FilterColums = "Email";
+                    break;
+                case "Address":
+                    FilterColums = "Address";
+                    break;
+                default:
+                    FilterColums = "None";
+                    break;
+            }
+
+            //Reset the filters in case nothing selected or filter value conains nothing.
+            if (txtFilterValue.Text.Trim() == "" || FilterColums == "None")
+            {
+                _dtAllPeople.DefaultView.RowFilter = "";
+                 lbRecordCount.Text = dgvPerson.Rows.Count.ToString();
+                  return;
+            }
+
+
+            if (FilterColums == "PersonID")
+                //in this case we deal with integer not string.
+
+                _dtAllPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColums, txtFilterValue.Text.Trim());
+            else
+                _dtAllPeople.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColums, txtFilterValue.Text.Trim());
+
+                lbRecordCount.Text = dgvPerson.Rows.Count.ToString();
+
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frmAddUpdate = new frmAddUpdatePerson();
+            frmAddUpdate.ShowDialog();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frmAddUpdate = new frmAddUpdatePerson((int)dgvPerson.CurrentRow.Cells[0].Value);
+
+            frmAddUpdate.ShowDialog();
+
         }
     }
 }

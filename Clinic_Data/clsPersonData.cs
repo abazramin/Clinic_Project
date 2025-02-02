@@ -117,7 +117,11 @@ namespace Clinic_Data
 
             SqlConnection connection = new SqlConnection(clsSetting.connection);
 
-            string query = "SELECT * FROM Persons";
+            string query = @"select Persons.PersonID , Persons.Name , Persons.DateOfBirth , 
+                            case  when Persons.Gendor = 0 then 'Male' Else 'Famele' end as Gendor ,
+                            Persons.Phone_Number , Persons.Email , Persons.Address 
+                            from Persons
+                            order by Name";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -145,7 +149,7 @@ namespace Clinic_Data
             return dt;
         }
         public static int AddNewPerson(string Name,   DateTime DateOfBirth,  byte Gendor,
-            string Phone, string Email, string Address)
+            string Phone_Number, string Email, string Address)
         {
             int PersonID = -1;
 
@@ -155,7 +159,7 @@ namespace Clinic_Data
             string query = @"INSERT INTO Persons 
                              (Name,DateOfBirth,Gendor,Phone_Number,Email,Address)
                              VALUES
-                             (@Name,@DateOfBirth,datetime,@Gendor,@Phone_Number,@Email,@Address);
+                             (@Name,@DateOfBirth,@Gendor,@Phone_Number,@Email,@Address);
                              SELECT SCOPE_IDENTITY()";
 
 
@@ -164,7 +168,7 @@ namespace Clinic_Data
             cmd.Parameters.AddWithValue("@Name", Name);
             cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
             cmd.Parameters.AddWithValue("@Gendor", Gendor);
-            cmd.Parameters.AddWithValue("@Phone_Number", Phone);
+            cmd.Parameters.AddWithValue("@Phone_Number", Phone_Number);
 
 
             if (Email != "" && Email != null)
