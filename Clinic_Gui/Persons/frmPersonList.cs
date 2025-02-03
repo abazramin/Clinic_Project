@@ -25,16 +25,7 @@ namespace Clinic_Gui.Persons
         //                                                 "DateOfBirth", "Gendor", "Phone_Number", "Email",
         //                                                 "Address");
 
-        private void _RefreshPeoplList()
-        {
-            _dtAllPeople = clsPerson.GetAllPerson();
-            _dtAllPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "Name",
-                                                         "DateOfBirth", "Gendor", "Phone_Number", "Email",
-                                                         "Address");
-
-            dgvPerson.DataSource = _dtAllPeople;
-            lbRecordCount.Text = dgvPerson.Rows.Count.ToString();
-        }
+      
 
         private void frmPersonList_Load(object sender, EventArgs e)
         {

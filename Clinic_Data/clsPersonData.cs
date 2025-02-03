@@ -217,7 +217,7 @@ namespace Clinic_Data
                             Gendor = @Gendor, 
                             Phone_Number = @Phone_Number, 
                             Email = @mail, 
-                            Address = @Address,
+                            Address = @Address
                             WHERE PersonID = @PersonID";
 
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -235,6 +235,7 @@ namespace Clinic_Data
             {
                 cmd.Parameters.AddWithValue("@Email", DBNull.Value);
             }
+
             cmd.Parameters.AddWithValue("@Address", Address);
 
 
