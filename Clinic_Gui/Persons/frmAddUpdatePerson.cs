@@ -16,7 +16,7 @@ namespace Clinic_Gui.Persons
 
         public enum enMode { Add = 0, Update = 1 }
 
-        public enum enGendor { Famle = 0, Male = 1 }
+        public enum enGendor {  Famle = 0 , Male = 1 }
 
         private enMode _Mode = enMode.Add;
 
@@ -36,6 +36,7 @@ namespace Clinic_Gui.Persons
         {
             InitializeComponent();
             _Mode = enMode.Update;
+            //
             _PersonID = PersonID;
         }
 
@@ -83,7 +84,7 @@ namespace Clinic_Gui.Persons
             txtName.Text = _person.Name;
             dtDateOfBirth.Value = _person.DateOfBirth;
 
-            if (_person.Gendor == 0)
+            if (_person.Gendor == 1)
             {
                 rtMale.Checked = true;
             }
@@ -110,16 +111,16 @@ namespace Clinic_Gui.Persons
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //
             if (!this.ValidateChildren())
             {
                 MessageBox.Show("Error in Vaildation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            //
             _person.Name = txtName.Text.Trim();
             _person.DateOfBirth = dtDateOfBirth.Value;
 
-            //_person.Gendor = (byte)(rtMale.Checked ? 0 : 1);
 
             if (rtMale.Checked)
             {

@@ -1,12 +1,8 @@
 ﻿using Clinic_Data;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Resources;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace Clinic_Busniess
 {
@@ -58,12 +54,13 @@ namespace Clinic_Busniess
             // call date access
             this.PersonID = clsPersonData.AddNewPerson(this.Name, this.DateOfBirth, this.Gendor, this.Phone_Number, this.Email, this.Address);
 
-            return (this.PersonID > 0);
+            return (this.PersonID != -1);
         }
 
 
         private bool _UpdatePerson()
         {
+            // call data acces
             return clsPersonData.UpdatePerson(this.PersonID, this.Name, this.DateOfBirth, this.Gendor, this.Phone_Number, this.Email, this.Address);
         }
 

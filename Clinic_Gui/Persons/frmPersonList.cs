@@ -29,7 +29,6 @@ namespace Clinic_Gui.Persons
 
         private void frmPersonList_Load(object sender, EventArgs e)
         {
-            //_dtAllPeople.DefaultView.RowFilter = "";
             dgvPerson.DataSource = _dtAllPeople;
             cbFilterBy.SelectedIndex = 0;
             lbRecordCount.Text = dgvPerson.Rows.Count.ToString();

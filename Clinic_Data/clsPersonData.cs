@@ -19,7 +19,7 @@ namespace Clinic_Data
 
             SqlConnection connection = new SqlConnection(clsSetting.connection);
 
-            string query = "select * from Person where PersonID = @PersonID";
+            string query = "select * from Persons where PersonID = @PersonID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -34,12 +34,13 @@ namespace Clinic_Data
                 {
                     isFound = true;
 
-                    Name = (string)reader["Name"];
-                    DateOfBirth = (DateTime)reader["DateOfBirth"];
-                    Gendor = (byte)reader["Gendor"];
-                    Phone = (string)reader["Phone"];
-                    Email = (string)reader["Email"];
-                    Address = (string)reader["Address"];
+                    Name = (string)reader[1];
+                    DateOfBirth = (DateTime)reader[2];
+                    Gendor = (byte)reader[3];
+                    //
+                    Phone = (string)reader[4];
+                    Email = (string)reader[5];
+                    Address = (string)reader[6];
 
                 }
                 else
@@ -110,7 +111,6 @@ namespace Clinic_Data
 
             return isFound;
         }
-
         public static DataTable GetAllPerson()
         {
             DataTable dt = new DataTable();
@@ -118,7 +118,7 @@ namespace Clinic_Data
             SqlConnection connection = new SqlConnection(clsSetting.connection);
 
             string query = @"select Persons.PersonID , Persons.Name , Persons.DateOfBirth , 
-                            case  when Persons.Gendor = 0 then 'Male' Else 'Famele' end as Gendor ,
+                            case  when Persons.Gendor = 0 then 'Famele' Else 'Male' end as Gendor ,
                             Persons.Phone_Number , Persons.Email , Persons.Address 
                             from Persons
                             order by Name";
